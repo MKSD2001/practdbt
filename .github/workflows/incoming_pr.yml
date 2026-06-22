@@ -59,7 +59,7 @@ jobs:
       - name: Build and Test dbt Project
         run: |
           snow dbt execute -x \
-            dimclient_dbt_project_object \
-            build \
-            --target prod \
+          dimclient_dbt_project_object \
+          build \
+          --target prod \
             
