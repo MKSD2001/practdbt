@@ -29,7 +29,7 @@ jobs:
       SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PAT }}
 
       # Optional but recommended
-      SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+      SNOWFLAKE_ROLE: ${{ vars.SNOWFLAKE_ROLE }}
       SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
 
       # Database and Schema
@@ -62,4 +62,4 @@ jobs:
             dimclient_dbt_project_object \
             build \
             --target prod \
-            --role ${{ vars.SNOWFLAKE_ROLE }}
+            
