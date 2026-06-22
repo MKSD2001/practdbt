@@ -19,11 +19,11 @@ dim_client_dbt:
 
     prod:
       type: snowflake
-      account: ""
-      user: ""
-      role: DBT_ROLE
-      warehouse: DBT_WH
-      database: WEALTH_DB
+      account: FITZQEO-LI10013
+      user: DEJE08
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: SNOWFLAKE_RND
       schema: BRONZE
       threads: 4
 
