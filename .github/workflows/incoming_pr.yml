@@ -26,7 +26,7 @@ jobs:
       # Snowflake Authentication
       SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PAT }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PAT }} # Double-check your GitHub Secret name here
 
       # Optional but recommended
       SNOWFLAKE_ROLE: ${{ vars.SNOWFLAKE_ROLE }}
@@ -50,16 +50,20 @@ jobs:
         run: snow connection test -x
 
       - name: Deploy dbt Project
-        run: snow dbt deploy dimclient_dbt_project_object --source ./dim_client_dbt/dim_client_dbt --dbt-version 1.10.15 --force -x --database ${{ vars.SNOWFLAKE_DATABASE }} --schema ${{ vars.SNOWFLAKE_SCHEMA }}
+        run: |
+          snow dbt deploy dimclient_dbt_project_object \
+            --source ./dim_client_dbt/dim_client_dbt \
+            --dbt-version 1.10.15 \
+            --force -x \
+            --database ${{ vars.SNOWFLAKE_DATABASE }} \
+            --schema ${{ vars.SNOWFLAKE_SCHEMA }}
         
       - name: List dbt Projects
-        run: |
-          snow dbt list -x
+        run: snow dbt list -x
 
       - name: Build and Test dbt Project
         run: |
           snow dbt execute -x \
-          dimclient_dbt_project_object \
-          build \
-          --target prod \
-            
+            dimclient_dbt_project_object \
+            build \
+            --target prod
