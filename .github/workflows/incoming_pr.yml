@@ -50,7 +50,7 @@ jobs:
         run: snow connection test -x
 
       - name: Deploy dbt Project
-        run: snow dbt deploy dimclient_dbt_project_object --source ./dim_client_dbt/dim_client_dbt --dbt-version 1.10.15 --force -x
+        run: snow dbt deploy dimclient_dbt_project_object --source ./dim_client_dbt/dim_client_dbt --dbt-version 1.10.15 --force -x --database ${{ vars.SNOWFLAKE_DATABASE }} --schema ${{ vars.SNOWFLAKE_SCHEMA }}
         
       - name: List dbt Projects
         run: |
