@@ -50,13 +50,8 @@ jobs:
         run: snow connection test -x
 
       - name: Deploy dbt Project
-        run: |
-          snow dbt deploy dimclient_dbt_project_object \ 
-            --source . \
-            --dbt-version 1.10.15 \
-            --force \
-            -x
-
+        run: snow dbt deploy dimclient_dbt_project_object --source . --dbt-version 1.10.15 --force -x
+        
       - name: List dbt Projects
         run: |
           snow dbt list -x
