@@ -6,7 +6,7 @@ WITH deduped AS (
             PARTITION BY client_id
             ORDER BY load_ts DESC
         ) AS rn
-    FROM {{ ref('stg_client') }}
+    FROM SNOWFLAKE_RND.bronze.stg_client
 
 )
 
