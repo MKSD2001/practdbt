@@ -61,5 +61,5 @@ jobs:
           snow dbt execute -x \
             dimclient_dbt_project_object \
             build \
-            --target prod
+            --target prod \
             --role ${{ vars.SNOWFLAKE_ROLE }}
