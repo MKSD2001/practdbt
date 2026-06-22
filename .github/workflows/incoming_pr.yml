@@ -62,3 +62,4 @@ jobs:
             dimclient_dbt_project_object \
             build \
             --target prod
+            --role ${{ secrets.SNOWFLAKE_ROLE }}
