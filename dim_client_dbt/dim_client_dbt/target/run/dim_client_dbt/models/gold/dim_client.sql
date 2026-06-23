@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table SNOWFLAKE_RND.gold.dim_client
+        create or replace transient table PROD_DB.gold.dim_client
          as
         (-- Gold layer: final DIM_CLIENT with surrogate key + current-row flag
 select
@@ -20,7 +20,7 @@ select
     dbt_valid_from                                       as effective_start_date,
     coalesce(dbt_valid_to, '9999-12-31'::timestamp_ntz)   as effective_end_date,
     case when dbt_valid_to is null then 'Y' else 'N' end  as is_current_flag
-from SNOWFLAKE_RND.gold.dim_client_snapshot
+from PROD_DB.gold.dim_client_snapshot
         );
       
   

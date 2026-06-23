@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table SNOWFLAKE_RND.silver.silver_client
+        create or replace transient table PROD_DB.silver.silver_client
          as
         (WITH deduped AS (
 
@@ -12,7 +12,7 @@
             PARTITION BY client_id
             ORDER BY load_ts DESC
         ) AS rn
-    FROM SNOWFLAKE_RND.bronze.stg_client
+    FROM PROD_DB.bronze.stg_client
 
 )
 
