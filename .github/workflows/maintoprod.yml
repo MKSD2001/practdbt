@@ -21,35 +21,27 @@ jobs:
 
       SNOWFLAKE_DATABASE: PROD_DB
       SNOWFLAKE_SCHEMA: PROD_SCHEMA
-      
-     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
 
-      - name: Install Snowflake CLI
-        uses: snowflakedb/snowflake-actions@v3
+    steps:
+      - uses: actions/checkout@v4
 
-      - name: Check Snowflake CLI Version
-        run: snow --version
+      - uses: snowflakedb/snowflake-actions@v3
 
-      - name: Test Snowflake Connection
-        run: snow connection test -x
+      - run: snow connection test -x
 
       - name: Deploy dbt Project
         run: |
-          snow dbt deploy dimclient_dbt_project_object_prod \
+          snow dbt deploy prod_dbt_project \
             --source ./dim_client_dbt/dim_client_dbt \
             --dbt-version 1.10.15 \
             --force -x \
-            --database ${{ SNOWFLAKE_DATABASE }} \
-            --schema ${{ SNOWFLAKE_SCHEMA }}
-        
-      - name: List dbt Projects
-        run: snow dbt list -x
+            --database PROD_DB \
+            --schema PROD_SCHEMA \
+            --debug 
 
-      - name: Build and Test dbt Project
+      - name: Run Production Build
         run: |
           snow dbt execute -x \
-            dimclient_dbt_project_object_prod \
+            prod_dbt_project \
             build \
             --target prod
