@@ -2328,3 +2328,586 @@ from SNOWFLAKE_RND.gold.dim_client_snapshot
 [0m01:02:10.822950 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.6458461, "process_in_blocks": "0", "process_kernel_time": 0.73, "process_mem_max_rss": "453372", "process_out_blocks": "0", "process_user_time": 3.8}
 [0m01:02:10.823582 [debug] [Dummy-1   ]: Command `cli run` succeeded at 01:02:10.823316 after 2.65 seconds
 [0m01:02:10.824121 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 23:23:14.176983 | 10d06232-ba28-440f-b875-07f0fe851649 ==============================
+[0m23:23:14.176983 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m23:23:14.177795 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m23:23:14.446265 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m23:23:14.977653 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m23:23:15.179290 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:23:15.179819 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:23:15.327656 [info ] [Dummy-1   ]: Found 3 models, 4 data tests, 1 snapshot, 1 source, 475 macros
+[0m23:23:15.329815 [info ] [Dummy-1   ]: 
+[0m23:23:15.330301 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m23:23:15.330801 [info ] [Dummy-1   ]: 
+[0m23:23:15.331455 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m23:23:15.336575 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_silver'
+[0m23:23:15.340178 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_bronze'
+[0m23:23:15.348174 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_gold'
+[0m23:23:15.448623 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:23:15.449280 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:23:15.449906 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:23:15.450431 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:23:15.450924 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:23:15.451481 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:23:15.451953 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:23:15.452431 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:23:15.452882 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:23:15.706342 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.254 seconds
+[0m23:23:15.710857 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:23:15.711566 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.260 seconds
+[0m23:23:15.712156 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.259 seconds
+[0m23:23:15.712651 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+show objects in SNOWFLAKE_RND.bronze
+    limit 10000
+    
+;
+[0m23:23:15.714364 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:23:15.715965 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:23:15.716794 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+show objects in SNOWFLAKE_RND.silver
+    limit 10000
+    
+;
+[0m23:23:15.717305 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+show objects in SNOWFLAKE_RND.gold
+    limit 10000
+    
+;
+[0m23:23:15.767185 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.049 seconds
+[0m23:23:15.768079 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.050 seconds
+[0m23:23:15.768882 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m23:23:15.770839 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:23:15.772902 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:23:15.774593 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:23:15.775270 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:23:15.775721 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:23:15.776200 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:23:15.816521 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.039 seconds
+[0m23:23:15.817135 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.040 seconds
+[0m23:23:15.817721 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.041 seconds
+[0m23:23:15.828376 [debug] [Thread-2 (]: Began running node model.dim_client_dbt.stg_client
+[0m23:23:15.829072 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_bronze, now model.dim_client_dbt.stg_client)
+[0m23:23:15.829554 [debug] [Thread-2 (]: Began compiling node model.dim_client_dbt.stg_client
+[0m23:23:15.838049 [debug] [Thread-2 (]: Writing injected SQL for node "model.dim_client_dbt.stg_client"
+[0m23:23:15.838785 [debug] [Thread-2 (]: Began executing node model.dim_client_dbt.stg_client
+[0m23:23:15.840448 [debug] [Thread-2 (]: Finished running node model.dim_client_dbt.stg_client
+[0m23:23:15.841478 [debug] [Thread-4 (]: Began running node model.dim_client_dbt.silver_client
+[0m23:23:15.842290 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_gold, now model.dim_client_dbt.silver_client)
+[0m23:23:15.842788 [debug] [Thread-4 (]: Began compiling node model.dim_client_dbt.silver_client
+[0m23:23:15.846650 [debug] [Thread-4 (]: Writing injected SQL for node "model.dim_client_dbt.silver_client"
+[0m23:23:15.847272 [debug] [Thread-4 (]: Began executing node model.dim_client_dbt.silver_client
+[0m23:23:15.847999 [debug] [Thread-4 (]: Finished running node model.dim_client_dbt.silver_client
+[0m23:23:15.848890 [debug] [Thread-3 (]: Began running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:23:15.849704 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_silver, now snapshot.dim_client_dbt.dim_client_snapshot)
+[0m23:23:15.850225 [debug] [Thread-3 (]: Began compiling node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:23:15.854655 [debug] [Thread-3 (]: Began executing node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:23:15.855418 [debug] [Thread-3 (]: Finished running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:23:15.856263 [debug] [Thread-5 (]: Began running node model.dim_client_dbt.dim_client
+[0m23:23:15.857094 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.dim_client_dbt.dim_client'
+[0m23:23:15.857588 [debug] [Thread-5 (]: Began compiling node model.dim_client_dbt.dim_client
+[0m23:23:15.861603 [debug] [Thread-5 (]: Writing injected SQL for node "model.dim_client_dbt.dim_client"
+[0m23:23:15.862226 [debug] [Thread-5 (]: Began executing node model.dim_client_dbt.dim_client
+[0m23:23:15.862955 [debug] [Thread-5 (]: Finished running node model.dim_client_dbt.dim_client
+[0m23:23:15.863923 [debug] [Thread-2 (]: Began running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:23:15.864424 [debug] [Thread-3 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:23:15.864961 [debug] [Thread-4 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:23:15.865499 [debug] [Thread-5 (]: Began running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:23:15.866029 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.stg_client, now test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95)
+[0m23:23:15.866573 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly snapshot.dim_client_dbt.dim_client_snapshot, now test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f)
+[0m23:23:15.867084 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.silver_client, now test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f)
+[0m23:23:15.867588 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.dim_client, now test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca)
+[0m23:23:15.868065 [debug] [Thread-2 (]: Began compiling node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:23:15.868601 [debug] [Thread-3 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:23:15.869079 [debug] [Thread-4 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:23:15.869551 [debug] [Thread-5 (]: Began compiling node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:23:15.882402 [debug] [Thread-2 (]: Writing injected SQL for node "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"
+[0m23:23:15.893212 [debug] [Thread-3 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"
+[0m23:23:15.897958 [debug] [Thread-4 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"
+[0m23:23:15.905329 [debug] [Thread-5 (]: Writing injected SQL for node "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"
+[0m23:23:15.906420 [debug] [Thread-2 (]: Began executing node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:23:15.907047 [debug] [Thread-3 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:23:15.907778 [debug] [Thread-4 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:23:15.908697 [debug] [Thread-2 (]: Finished running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:23:15.909248 [debug] [Thread-5 (]: Began executing node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:23:15.909960 [debug] [Thread-3 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:23:15.910656 [debug] [Thread-4 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:23:15.911644 [debug] [Thread-5 (]: Finished running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:23:15.914159 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m23:23:15.914600 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f' was properly closed.
+[0m23:23:15.914992 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95' was properly closed.
+[0m23:23:15.915370 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f' was properly closed.
+[0m23:23:15.915734 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca' was properly closed.
+[0m23:23:15.917133 [debug] [Dummy-1   ]: Command end result
+[0m23:23:16.012430 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m23:23:16.014117 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m23:23:16.020656 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m23:23:16.023416 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'generate_catalog'
+[0m23:23:16.023855 [info ] [Dummy-1   ]: Building catalog
+[0m23:23:16.033765 [debug] [ThreadPool]: Acquiring new snowflake connection 'SNOWFLAKE_RND.information_schema'
+[0m23:23:16.049366 [debug] [ThreadPool]: Using snowflake connection "SNOWFLAKE_RND.information_schema"
+[0m23:23:16.050134 [debug] [ThreadPool]: On SNOWFLAKE_RND.information_schema: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "SNOWFLAKE_RND.information_schema"} */
+with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from SNOWFLAKE_RND.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'bronze' and upper("table_schema") = upper('bronze')
+
+                    and 
+    "table_name" ilike 'stg_client' and upper("table_name") = upper('stg_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'SRC_CLIENT' and upper("table_name") = upper('SRC_CLIENT')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client' and upper("table_name") = upper('dim_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'silver' and upper("table_schema") = upper('silver')
+
+                    and 
+    "table_name" ilike 'silver_client' and upper("table_name") = upper('silver_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client_snapshot' and upper("table_name") = upper('dim_client_snapshot')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from SNOWFLAKE_RND.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'bronze' and upper("table_schema") = upper('bronze')
+
+                    and 
+    "table_name" ilike 'stg_client' and upper("table_name") = upper('stg_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'SRC_CLIENT' and upper("table_name") = upper('SRC_CLIENT')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client' and upper("table_name") = upper('dim_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'silver' and upper("table_schema") = upper('silver')
+
+                    and 
+    "table_name" ilike 'silver_client' and upper("table_name") = upper('silver_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client_snapshot' and upper("table_name") = upper('dim_client_snapshot')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+[0m23:23:16.050718 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:23:18.580628 [debug] [ThreadPool]: SQL status: SUCCESS 49 in 2.530 seconds
+[0m23:23:18.611781 [debug] [Dummy-1   ]: Wrote artifact CatalogArtifact to /tmp/dbt/target/catalog.json
+[0m23:23:18.633622 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m23:23:18.635269 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m23:23:18.635702 [info ] [Dummy-1   ]: Catalog written to /tmp/dbt/target/catalog.json
+[0m23:23:18.637313 [debug] [Dummy-1   ]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 4.530568, "process_in_blocks": "0", "process_kernel_time": 0.86, "process_mem_max_rss": "444052", "process_out_blocks": "0", "process_user_time": 3.94}
+[0m23:23:18.637933 [debug] [Dummy-1   ]: Command `cli docs generate` succeeded at 23:23:18.637693 after 4.53 seconds
+[0m23:23:18.638436 [debug] [Dummy-1   ]: Connection 'generate_catalog' was properly closed.
+[0m23:23:18.638858 [debug] [Dummy-1   ]: Connection 'SNOWFLAKE_RND.information_schema' was properly closed.
+[0m23:23:18.639290 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 23:29:37.701835 | 0c5b161f-c2b7-43eb-9658-3b496655a7c4 ==============================
+[0m23:29:37.701835 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m23:29:37.702666 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m23:29:37.974667 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m23:29:38.529205 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m23:29:38.737340 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:29:38.737934 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:29:38.890564 [info ] [Dummy-1   ]: Found 3 models, 4 data tests, 1 snapshot, 1 source, 475 macros
+[0m23:29:38.892738 [info ] [Dummy-1   ]: 
+[0m23:29:38.893237 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m23:29:38.893661 [info ] [Dummy-1   ]: 
+[0m23:29:38.894428 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m23:29:38.900038 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_silver'
+[0m23:29:38.901156 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_bronze'
+[0m23:29:38.905233 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_RND_gold'
+[0m23:29:39.014682 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:29:39.015362 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:29:39.016052 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:29:39.016619 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:29:39.017148 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:29:39.017661 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m23:29:39.018197 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:29:39.018960 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:29:39.019407 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:29:39.268630 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.249 seconds
+[0m23:29:39.269387 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.250 seconds
+[0m23:29:39.273783 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:29:39.274460 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.256 seconds
+[0m23:29:39.276223 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:29:39.276761 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+show objects in SNOWFLAKE_RND.gold
+    limit 10000
+    
+;
+[0m23:29:39.278462 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:29:39.278944 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+show objects in SNOWFLAKE_RND.bronze
+    limit 10000
+    
+;
+[0m23:29:39.279762 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+show objects in SNOWFLAKE_RND.silver
+    limit 10000
+    
+;
+[0m23:29:39.328767 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.048 seconds
+[0m23:29:39.329570 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.049 seconds
+[0m23:29:39.331544 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_bronze"
+[0m23:29:39.332286 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.053 seconds
+[0m23:29:39.334259 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_silver"
+[0m23:29:39.334737 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_bronze"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:29:39.336428 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_RND_gold"
+[0m23:29:39.336919 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:29:39.337625 [debug] [ThreadPool]: On list_SNOWFLAKE_RND_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "list_SNOWFLAKE_RND_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m23:29:39.374964 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.037 seconds
+[0m23:29:39.375606 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.037 seconds
+[0m23:29:39.376220 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.038 seconds
+[0m23:29:39.387177 [debug] [Thread-2 (]: Began running node model.dim_client_dbt.stg_client
+[0m23:29:39.387850 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_bronze, now model.dim_client_dbt.stg_client)
+[0m23:29:39.388441 [debug] [Thread-2 (]: Began compiling node model.dim_client_dbt.stg_client
+[0m23:29:39.397067 [debug] [Thread-2 (]: Writing injected SQL for node "model.dim_client_dbt.stg_client"
+[0m23:29:39.397757 [debug] [Thread-2 (]: Began executing node model.dim_client_dbt.stg_client
+[0m23:29:39.399479 [debug] [Thread-2 (]: Finished running node model.dim_client_dbt.stg_client
+[0m23:29:39.400601 [debug] [Thread-4 (]: Began running node model.dim_client_dbt.silver_client
+[0m23:29:39.401359 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_gold, now model.dim_client_dbt.silver_client)
+[0m23:29:39.401873 [debug] [Thread-4 (]: Began compiling node model.dim_client_dbt.silver_client
+[0m23:29:39.405856 [debug] [Thread-4 (]: Writing injected SQL for node "model.dim_client_dbt.silver_client"
+[0m23:29:39.406542 [debug] [Thread-4 (]: Began executing node model.dim_client_dbt.silver_client
+[0m23:29:39.407321 [debug] [Thread-4 (]: Finished running node model.dim_client_dbt.silver_client
+[0m23:29:39.408344 [debug] [Thread-3 (]: Began running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:29:39.409077 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_RND_silver, now snapshot.dim_client_dbt.dim_client_snapshot)
+[0m23:29:39.409569 [debug] [Thread-3 (]: Began compiling node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:29:39.414208 [debug] [Thread-3 (]: Began executing node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:29:39.415010 [debug] [Thread-3 (]: Finished running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m23:29:39.415920 [debug] [Thread-5 (]: Began running node model.dim_client_dbt.dim_client
+[0m23:29:39.416844 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.dim_client_dbt.dim_client'
+[0m23:29:39.417331 [debug] [Thread-5 (]: Began compiling node model.dim_client_dbt.dim_client
+[0m23:29:39.421434 [debug] [Thread-5 (]: Writing injected SQL for node "model.dim_client_dbt.dim_client"
+[0m23:29:39.422127 [debug] [Thread-5 (]: Began executing node model.dim_client_dbt.dim_client
+[0m23:29:39.422868 [debug] [Thread-5 (]: Finished running node model.dim_client_dbt.dim_client
+[0m23:29:39.423822 [debug] [Thread-2 (]: Began running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:29:39.424369 [debug] [Thread-3 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:29:39.424974 [debug] [Thread-4 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:29:39.425530 [debug] [Thread-5 (]: Began running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:29:39.426083 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.stg_client, now test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95)
+[0m23:29:39.426649 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly snapshot.dim_client_dbt.dim_client_snapshot, now test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f)
+[0m23:29:39.427190 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.silver_client, now test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f)
+[0m23:29:39.427756 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.dim_client, now test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca)
+[0m23:29:39.428314 [debug] [Thread-2 (]: Began compiling node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:29:39.428807 [debug] [Thread-3 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:29:39.429289 [debug] [Thread-4 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:29:39.429743 [debug] [Thread-5 (]: Began compiling node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:29:39.442878 [debug] [Thread-2 (]: Writing injected SQL for node "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"
+[0m23:29:39.453795 [debug] [Thread-3 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"
+[0m23:29:39.458892 [debug] [Thread-4 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"
+[0m23:29:39.466382 [debug] [Thread-5 (]: Writing injected SQL for node "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"
+[0m23:29:39.467361 [debug] [Thread-2 (]: Began executing node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:29:39.468142 [debug] [Thread-3 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:29:39.468970 [debug] [Thread-4 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:29:39.469812 [debug] [Thread-2 (]: Finished running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m23:29:39.470323 [debug] [Thread-5 (]: Began executing node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:29:39.471055 [debug] [Thread-3 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m23:29:39.471794 [debug] [Thread-4 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m23:29:39.472770 [debug] [Thread-5 (]: Finished running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m23:29:39.475252 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m23:29:39.475794 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f' was properly closed.
+[0m23:29:39.476259 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95' was properly closed.
+[0m23:29:39.476712 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f' was properly closed.
+[0m23:29:39.477121 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca' was properly closed.
+[0m23:29:39.478661 [debug] [Dummy-1   ]: Command end result
+[0m23:29:39.574600 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m23:29:39.576351 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m23:29:39.582977 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m23:29:39.586419 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'generate_catalog'
+[0m23:29:39.586813 [info ] [Dummy-1   ]: Building catalog
+[0m23:29:39.596796 [debug] [ThreadPool]: Acquiring new snowflake connection 'SNOWFLAKE_RND.information_schema'
+[0m23:29:39.612993 [debug] [ThreadPool]: Using snowflake connection "SNOWFLAKE_RND.information_schema"
+[0m23:29:39.613796 [debug] [ThreadPool]: On SNOWFLAKE_RND.information_schema: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "dev", "connection_name": "SNOWFLAKE_RND.information_schema"} */
+with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from SNOWFLAKE_RND.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client' and upper("table_name") = upper('dim_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'SRC_CLIENT' and upper("table_name") = upper('SRC_CLIENT')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client_snapshot' and upper("table_name") = upper('dim_client_snapshot')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'silver' and upper("table_schema") = upper('silver')
+
+                    and 
+    "table_name" ilike 'silver_client' and upper("table_name") = upper('silver_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'bronze' and upper("table_schema") = upper('bronze')
+
+                    and 
+    "table_name" ilike 'stg_client' and upper("table_name") = upper('stg_client')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from SNOWFLAKE_RND.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client' and upper("table_name") = upper('dim_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'RAW' and upper("table_schema") = upper('RAW')
+
+                    and 
+    "table_name" ilike 'SRC_CLIENT' and upper("table_name") = upper('SRC_CLIENT')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'gold' and upper("table_schema") = upper('gold')
+
+                    and 
+    "table_name" ilike 'dim_client_snapshot' and upper("table_name") = upper('dim_client_snapshot')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'silver' and upper("table_schema") = upper('silver')
+
+                    and 
+    "table_name" ilike 'silver_client' and upper("table_name") = upper('silver_client')
+
+                )
+             or 
+                (
+                    
+    "table_schema" ilike 'bronze' and upper("table_schema") = upper('bronze')
+
+                    and 
+    "table_name" ilike 'stg_client' and upper("table_name") = upper('stg_client')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+[0m23:29:39.614421 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:29:42.337836 [debug] [ThreadPool]: SQL status: SUCCESS 49 in 2.723 seconds
+[0m23:29:42.369555 [debug] [Dummy-1   ]: Wrote artifact CatalogArtifact to /tmp/dbt/target/catalog.json
+[0m23:29:42.391748 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m23:29:42.393557 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m23:29:42.394017 [info ] [Dummy-1   ]: Catalog written to /tmp/dbt/target/catalog.json
+[0m23:29:42.395706 [debug] [Dummy-1   ]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 4.76603, "process_in_blocks": "0", "process_kernel_time": 0.83, "process_mem_max_rss": "450004", "process_out_blocks": "0", "process_user_time": 4.08}
+[0m23:29:42.396360 [debug] [Dummy-1   ]: Command `cli docs generate` succeeded at 23:29:42.396097 after 4.77 seconds
+[0m23:29:42.396856 [debug] [Dummy-1   ]: Connection 'generate_catalog' was properly closed.
+[0m23:29:42.397268 [debug] [Dummy-1   ]: Connection 'SNOWFLAKE_RND.information_schema' was properly closed.
+[0m23:29:42.397724 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 23:30:23.328977 | abb7f8ef-a454-463b-ba2f-de2c72eae35d ==============================
+[0m23:30:23.328977 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m23:30:23.329803 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m23:30:23.602002 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m23:30:24.147596 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m23:30:24.358327 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:30:24.358922 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:30:24.572658 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m23:30:24.574497 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m23:30:24.605521 [info ] [Dummy-1   ]: dim_client_dbt.gold.dim_client
+[0m23:30:24.606028 [info ] [Dummy-1   ]: dim_client_dbt.silver.silver_client
+[0m23:30:24.606438 [info ] [Dummy-1   ]: dim_client_dbt.staging.stg_client
+[0m23:30:24.606845 [info ] [Dummy-1   ]: dim_client_dbt.dim_client_snapshot.dim_client_snapshot
+[0m23:30:24.607213 [info ] [Dummy-1   ]: source:dim_client_dbt.raw.src_client
+[0m23:30:24.607601 [info ] [Dummy-1   ]: dim_client_dbt.gold.accepted_values_dim_client_is_current_flag__Y__N
+[0m23:30:24.608022 [info ] [Dummy-1   ]: dim_client_dbt.gold.not_null_dim_client_client_id
+[0m23:30:24.608482 [info ] [Dummy-1   ]: dim_client_dbt.gold.not_null_dim_client_client_sk
+[0m23:30:24.608884 [info ] [Dummy-1   ]: dim_client_dbt.gold.unique_dim_client_client_sk
+[0m23:30:24.610233 [debug] [Dummy-1   ]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.353172, "process_in_blocks": "0", "process_kernel_time": 0.79, "process_mem_max_rss": "408404", "process_out_blocks": "0", "process_user_time": 3.69}
+[0m23:30:24.610795 [debug] [Dummy-1   ]: Command `cli list` succeeded at 23:30:24.610577 after 1.35 seconds
+[0m23:30:24.611292 [debug] [Dummy-1   ]: Flushing usage events

@@ -23,8 +23,8 @@ dim_client_dbt:
       user: DEJE08
       role: ACCOUNTADMIN
       warehouse: COMPUTE_WH
-      database: SNOWFLAKE_RND
-      schema: BRONZE
+      database: PROD_DB
+      schema: PROD_SCHEMA
       threads: 4
 
 
