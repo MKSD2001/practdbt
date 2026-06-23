@@ -2911,3 +2911,473 @@ with tables as (
 [0m23:30:24.610233 [debug] [Dummy-1   ]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.353172, "process_in_blocks": "0", "process_kernel_time": 0.79, "process_mem_max_rss": "408404", "process_out_blocks": "0", "process_user_time": 3.69}
 [0m23:30:24.610795 [debug] [Dummy-1   ]: Command `cli list` succeeded at 23:30:24.610577 after 1.35 seconds
 [0m23:30:24.611292 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 00:04:28.865731 | bab47cf5-04a2-4623-a61f-fc0f4049b06f ==============================
+[0m00:04:28.865731 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m00:04:28.866535 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m00:04:29.135039 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m00:04:29.677673 [debug] [Dummy-1   ]: checksum: 6d8301ed5f8f0471e249cbcc8805b42bc5f78a9b258cb4e5c4b012c6ace116b4, vars: {}, profile: , target: prod, version: 1.9.4
+[0m00:04:29.824728 [info ] [Dummy-1   ]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m00:04:29.825375 [debug] [Dummy-1   ]: previous checksum: 6d8301ed5f8f0471e249cbcc8805b42bc5f78a9b258cb4e5c4b012c6ace116b4, current checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25
+[0m00:04:29.825816 [info ] [Dummy-1   ]: Unable to do partial parsing because profile has changed
+[0m00:04:31.629807 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:04:31.631614 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:04:31.687266 [info ] [Dummy-1   ]: Found 3 models, 1 snapshot, 4 data tests, 1 source, 475 macros
+[0m00:04:31.689688 [info ] [Dummy-1   ]: 
+[0m00:04:31.690165 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='prod')
+[0m00:04:31.690586 [info ] [Dummy-1   ]: 
+[0m00:04:31.691262 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m00:04:31.696571 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PROD_DB'
+[0m00:04:31.697653 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PROD_DB'
+[0m00:04:31.703876 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PROD_DB'
+[0m00:04:31.783405 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB"
+[0m00:04:31.784055 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB"
+[0m00:04:31.784633 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB"
+[0m00:04:31.785118 [debug] [ThreadPool]: On list_PROD_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB"} */
+show terse schemas in database PROD_DB
+    limit 10000
+[0m00:04:31.785578 [debug] [ThreadPool]: On list_PROD_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB"} */
+show terse schemas in database PROD_DB
+    limit 10000
+[0m00:04:31.786013 [debug] [ThreadPool]: On list_PROD_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB"} */
+show terse schemas in database PROD_DB
+    limit 10000
+[0m00:04:31.786453 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:31.786875 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:31.787281 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.052134 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.265 seconds
+[0m00:04:32.054511 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.267 seconds
+[0m00:04:32.055242 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.268 seconds
+[0m00:04:32.058434 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PROD_DB, now create_PROD_DB_silver)
+[0m00:04:32.058955 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PROD_DB, now create_PROD_DB_gold)
+[0m00:04:32.059438 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PROD_DB, now create_PROD_DB_bronze)
+[0m00:04:32.060114 [debug] [ThreadPool]: Creating schema "database: "PROD_DB"
+schema: "silver"
+"
+[0m00:04:32.060707 [debug] [ThreadPool]: Creating schema "database: "PROD_DB"
+schema: "gold"
+"
+[0m00:04:32.061320 [debug] [ThreadPool]: Creating schema "database: "PROD_DB"
+schema: "bronze"
+"
+[0m00:04:32.067203 [debug] [ThreadPool]: Using snowflake connection "create_PROD_DB_silver"
+[0m00:04:32.070596 [debug] [ThreadPool]: Using snowflake connection "create_PROD_DB_gold"
+[0m00:04:32.074474 [debug] [ThreadPool]: Using snowflake connection "create_PROD_DB_bronze"
+[0m00:04:32.074975 [debug] [ThreadPool]: On create_PROD_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "create_PROD_DB_silver"} */
+create schema if not exists PROD_DB.silver
+[0m00:04:32.075485 [debug] [ThreadPool]: On create_PROD_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "create_PROD_DB_gold"} */
+create schema if not exists PROD_DB.gold
+[0m00:04:32.075961 [debug] [ThreadPool]: On create_PROD_DB_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "create_PROD_DB_bronze"} */
+create schema if not exists PROD_DB.bronze
+[0m00:04:32.076447 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.076907 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.077335 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.307957 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.230 seconds
+[0m00:04:32.317412 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.241 seconds
+[0m00:04:32.325744 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.249 seconds
+[0m00:04:32.329600 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PROD_DB_silver'
+[0m00:04:32.330471 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_PROD_DB_bronze, now list_PROD_DB_gold)
+[0m00:04:32.331263 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_PROD_DB_gold, now list_PROD_DB_bronze)
+[0m00:04:32.343759 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_silver"
+[0m00:04:32.347136 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_gold"
+[0m00:04:32.350583 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_bronze"
+[0m00:04:32.351136 [debug] [ThreadPool]: On list_PROD_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_silver"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:04:32.351603 [debug] [ThreadPool]: On list_PROD_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_gold"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:04:32.352098 [debug] [ThreadPool]: On list_PROD_DB_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_bronze"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:04:32.352549 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.352998 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.353448 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:04:32.575969 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.223 seconds
+[0m00:04:32.576658 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.224 seconds
+[0m00:04:32.577245 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.224 seconds
+[0m00:04:32.581587 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_silver"
+[0m00:04:32.583214 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_gold"
+[0m00:04:32.584823 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_bronze"
+[0m00:04:32.585360 [debug] [ThreadPool]: On list_PROD_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_silver"} */
+show objects in PROD_DB.silver
+    limit 10000
+    
+;
+[0m00:04:32.585858 [debug] [ThreadPool]: On list_PROD_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_gold"} */
+show objects in PROD_DB.gold
+    limit 10000
+    
+;
+[0m00:04:32.586313 [debug] [ThreadPool]: On list_PROD_DB_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_bronze"} */
+show objects in PROD_DB.bronze
+    limit 10000
+    
+;
+[0m00:04:32.622069 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.035 seconds
+[0m00:04:32.623744 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_silver"
+[0m00:04:32.624279 [debug] [ThreadPool]: On list_PROD_DB_silver: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_silver"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:04:32.624978 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.036 seconds
+[0m00:04:32.625643 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.039 seconds
+[0m00:04:32.627488 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_bronze"
+[0m00:04:32.629048 [debug] [ThreadPool]: Using snowflake connection "list_PROD_DB_gold"
+[0m00:04:32.629544 [debug] [ThreadPool]: On list_PROD_DB_bronze: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_bronze"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:04:32.630026 [debug] [ThreadPool]: On list_PROD_DB_gold: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "connection_name": "list_PROD_DB_gold"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:04:32.663928 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.038 seconds
+[0m00:04:32.665776 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.035 seconds
+[0m00:04:32.666379 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.036 seconds
+[0m00:04:32.673846 [debug] [Thread-2 (]: Began running node model.dim_client_dbt.stg_client
+[0m00:04:32.674612 [info ] [Thread-2 (]: 1 of 8 START sql view model bronze.stg_client .................................. [RUN]
+[0m00:04:32.675275 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PROD_DB_gold, now model.dim_client_dbt.stg_client)
+[0m00:04:32.675828 [debug] [Thread-2 (]: Began compiling node model.dim_client_dbt.stg_client
+[0m00:04:32.684474 [debug] [Thread-2 (]: Writing injected SQL for node "model.dim_client_dbt.stg_client"
+[0m00:04:32.685161 [debug] [Thread-2 (]: Began executing node model.dim_client_dbt.stg_client
+[0m00:04:32.721600 [debug] [Thread-2 (]: Writing runtime sql for node "model.dim_client_dbt.stg_client"
+[0m00:04:32.722927 [debug] [Thread-2 (]: Using snowflake connection "model.dim_client_dbt.stg_client"
+[0m00:04:32.723451 [debug] [Thread-2 (]: On model.dim_client_dbt.stg_client: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "model.dim_client_dbt.stg_client"} */
+create or replace   view PROD_DB.bronze.stg_client
+  
+   as (
+    -- Bronze layer: light clean/cast, 1:1 with source, no business logic
+with source as (
+    select * from SNOWFLAKE_RND.RAW.SRC_CLIENT
+)
+
+select
+    trim(client_id)             as client_id,
+    trim(client_name)           as client_name,
+    upper(trim(client_type))    as client_type,
+    trim(region)                as region,
+    initcap(trim(risk_profile)) as risk_profile,
+    initcap(trim(status))       as status,
+    source_system,
+    load_ts
+from source
+where client_id is not null
+  );
+[0m00:04:32.723935 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m00:04:33.015306 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.291 seconds
+[0m00:04:33.038290 [info ] [Thread-2 (]: 1 of 8 OK created sql view model bronze.stg_client ............................. [[32mSUCCESS 1[0m in 0.36s]
+[0m00:04:33.039075 [debug] [Thread-2 (]: Finished running node model.dim_client_dbt.stg_client
+[0m00:04:33.040443 [debug] [Thread-4 (]: Began running node model.dim_client_dbt.silver_client
+[0m00:04:33.041273 [info ] [Thread-4 (]: 2 of 8 START sql table model silver.silver_client .............................. [RUN]
+[0m00:04:33.041891 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_PROD_DB_silver, now model.dim_client_dbt.silver_client)
+[0m00:04:33.042361 [debug] [Thread-4 (]: Began compiling node model.dim_client_dbt.silver_client
+[0m00:04:33.046625 [debug] [Thread-4 (]: Writing injected SQL for node "model.dim_client_dbt.silver_client"
+[0m00:04:33.047307 [debug] [Thread-4 (]: Began executing node model.dim_client_dbt.silver_client
+[0m00:04:33.072552 [debug] [Thread-4 (]: Writing runtime sql for node "model.dim_client_dbt.silver_client"
+[0m00:04:33.074014 [debug] [Thread-4 (]: Using snowflake connection "model.dim_client_dbt.silver_client"
+[0m00:04:33.074568 [debug] [Thread-4 (]: On model.dim_client_dbt.silver_client: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "model.dim_client_dbt.silver_client"} */
+create or replace transient table PROD_DB.silver.silver_client
+         as
+        (WITH deduped AS (
+
+    SELECT
+        *,
+        ROW_NUMBER() OVER (
+            PARTITION BY client_id
+            ORDER BY load_ts DESC
+        ) AS rn
+    FROM PROD_DB.bronze.stg_client
+
+)
+
+SELECT
+    client_id,
+    client_name,
+    client_type,
+    region,
+    risk_profile,
+    status,
+    source_system,
+    load_ts,
+
+    MD5(
+        COALESCE(client_name, '') ||
+        COALESCE(client_type, '') ||
+        COALESCE(region, '') ||
+        COALESCE(risk_profile, '') ||
+        COALESCE(status, '')
+    ) AS row_hash
+
+FROM deduped
+WHERE rn = 1
+        );
+[0m00:04:33.075072 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m00:04:33.626707 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.551 seconds
+[0m00:04:33.629408 [info ] [Thread-4 (]: 2 of 8 OK created sql table model silver.silver_client ......................... [[32mSUCCESS 1[0m in 0.59s]
+[0m00:04:33.630132 [debug] [Thread-4 (]: Finished running node model.dim_client_dbt.silver_client
+[0m00:04:33.631240 [debug] [Thread-3 (]: Began running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m00:04:33.632144 [info ] [Thread-3 (]: 3 of 8 START snapshot gold.dim_client_snapshot ................................. [RUN]
+[0m00:04:33.632797 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PROD_DB_bronze, now snapshot.dim_client_dbt.dim_client_snapshot)
+[0m00:04:33.633287 [debug] [Thread-3 (]: Began compiling node snapshot.dim_client_dbt.dim_client_snapshot
+[0m00:04:33.638167 [debug] [Thread-3 (]: Began executing node snapshot.dim_client_dbt.dim_client_snapshot
+[0m00:04:33.704621 [debug] [Thread-3 (]: Using snowflake connection "snapshot.dim_client_dbt.dim_client_snapshot"
+[0m00:04:33.705216 [debug] [Thread-3 (]: On snapshot.dim_client_dbt.dim_client_snapshot: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "snapshot.dim_client_dbt.dim_client_snapshot"} */
+/* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "snapshot.dim_client_dbt.dim_client_snapshot"} */
+select * from (
+        
+    
+
+    select *,
+        md5(coalesce(cast(client_id as varchar ), '')
+         || '|' || coalesce(cast(to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as varchar ), '')
+        ) as dbt_scd_id,
+        to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as dbt_updated_at,
+        to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as dbt_valid_from,
+        
+  
+  coalesce(nullif(to_timestamp_ntz(convert_timezone('UTC', current_timestamp())), to_timestamp_ntz(convert_timezone('UTC', current_timestamp()))), null)
+  as dbt_valid_to
+from (
+        
+
+
+
+select * from PROD_DB.silver.silver_client
+
+    ) sbq
+
+
+
+    ) as __dbt_sbq
+    where false
+    limit 0
+[0m00:04:33.705704 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m00:04:34.004968 [debug] [Thread-3 (]: SQL status: SUCCESS 0 in 0.299 seconds
+[0m00:04:34.008899 [debug] [Thread-3 (]: Using snowflake connection "snapshot.dim_client_dbt.dim_client_snapshot"
+[0m00:04:34.009433 [debug] [Thread-3 (]: On snapshot.dim_client_dbt.dim_client_snapshot: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "snapshot.dim_client_dbt.dim_client_snapshot"} */
+/* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "snapshot.dim_client_dbt.dim_client_snapshot"} */
+select * from (
+        select to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as dbt_snapshot_time
+    ) as __dbt_sbq
+    where false
+    limit 0
+[0m00:04:34.044555 [debug] [Thread-3 (]: SQL status: SUCCESS 0 in 0.035 seconds
+[0m00:04:34.045244 [debug] [Thread-3 (]: Writing runtime sql for node "snapshot.dim_client_dbt.dim_client_snapshot"
+[0m00:04:34.046811 [debug] [Thread-3 (]: Using snowflake connection "snapshot.dim_client_dbt.dim_client_snapshot"
+[0m00:04:34.047352 [debug] [Thread-3 (]: On snapshot.dim_client_dbt.dim_client_snapshot: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "snapshot.dim_client_dbt.dim_client_snapshot"} */
+create or replace transient table PROD_DB.gold.dim_client_snapshot
+         as
+        (
+    
+
+    select *,
+        md5(coalesce(cast(client_id as varchar ), '')
+         || '|' || coalesce(cast(to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as varchar ), '')
+        ) as dbt_scd_id,
+        to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as dbt_updated_at,
+        to_timestamp_ntz(convert_timezone('UTC', current_timestamp())) as dbt_valid_from,
+        
+  
+  coalesce(nullif(to_timestamp_ntz(convert_timezone('UTC', current_timestamp())), to_timestamp_ntz(convert_timezone('UTC', current_timestamp()))), null)
+  as dbt_valid_to
+from (
+        
+
+
+
+select * from PROD_DB.silver.silver_client
+
+    ) sbq
+
+
+
+        );
+[0m00:04:34.334845 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.287 seconds
+[0m00:04:34.341399 [info ] [Thread-3 (]: 3 of 8 OK snapshotted gold.dim_client_snapshot ................................. [[32mSUCCESS 1[0m in 0.71s]
+[0m00:04:34.342181 [debug] [Thread-3 (]: Finished running node snapshot.dim_client_dbt.dim_client_snapshot
+[0m00:04:34.343296 [debug] [Thread-5 (]: Began running node model.dim_client_dbt.dim_client
+[0m00:04:34.344183 [info ] [Thread-5 (]: 4 of 8 START sql table model gold.dim_client ................................... [RUN]
+[0m00:04:34.344824 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly create_PROD_DB_silver, now model.dim_client_dbt.dim_client)
+[0m00:04:34.345320 [debug] [Thread-5 (]: Began compiling node model.dim_client_dbt.dim_client
+[0m00:04:34.350729 [debug] [Thread-5 (]: Writing injected SQL for node "model.dim_client_dbt.dim_client"
+[0m00:04:34.351419 [debug] [Thread-5 (]: Began executing node model.dim_client_dbt.dim_client
+[0m00:04:34.354960 [debug] [Thread-5 (]: Writing runtime sql for node "model.dim_client_dbt.dim_client"
+[0m00:04:34.356293 [debug] [Thread-5 (]: Using snowflake connection "model.dim_client_dbt.dim_client"
+[0m00:04:34.356809 [debug] [Thread-5 (]: On model.dim_client_dbt.dim_client: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "model.dim_client_dbt.dim_client"} */
+create or replace transient table PROD_DB.gold.dim_client
+         as
+        (-- Gold layer: final DIM_CLIENT with surrogate key + current-row flag
+select
+    MD5(
+        COALESCE(client_id, '') ||
+        COALESCE(dbt_valid_from, '')
+    ) as client_sk,
+    client_id,
+    client_name,
+    client_type,
+    region,
+    risk_profile,
+    status,
+    source_system,
+    dbt_valid_from                                       as effective_start_date,
+    coalesce(dbt_valid_to, '9999-12-31'::timestamp_ntz)   as effective_end_date,
+    case when dbt_valid_to is null then 'Y' else 'N' end  as is_current_flag
+from PROD_DB.gold.dim_client_snapshot
+        );
+[0m00:04:34.357297 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m00:04:34.864489 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.507 seconds
+[0m00:04:34.867119 [info ] [Thread-5 (]: 4 of 8 OK created sql table model gold.dim_client .............................. [[32mSUCCESS 1[0m in 0.52s]
+[0m00:04:34.867841 [debug] [Thread-5 (]: Finished running node model.dim_client_dbt.dim_client
+[0m00:04:34.869028 [debug] [Thread-2 (]: Began running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m00:04:34.869581 [debug] [Thread-3 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m00:04:34.870159 [debug] [Thread-4 (]: Began running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m00:04:34.870728 [debug] [Thread-5 (]: Began running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m00:04:34.871205 [info ] [Thread-2 (]: 5 of 8 START test accepted_values_dim_client_is_current_flag__Y__N ............. [RUN]
+[0m00:04:34.871740 [info ] [Thread-3 (]: 6 of 8 START test not_null_dim_client_client_id ................................ [RUN]
+[0m00:04:34.872255 [info ] [Thread-4 (]: 7 of 8 START test not_null_dim_client_client_sk ................................ [RUN]
+[0m00:04:34.872800 [info ] [Thread-5 (]: 8 of 8 START test unique_dim_client_client_sk .................................. [RUN]
+[0m00:04:34.873381 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.stg_client, now test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95)
+[0m00:04:34.873914 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly snapshot.dim_client_dbt.dim_client_snapshot, now test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f)
+[0m00:04:34.874495 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.silver_client, now test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f)
+[0m00:04:34.875020 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.dim_client_dbt.dim_client, now test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca)
+[0m00:04:34.875513 [debug] [Thread-2 (]: Began compiling node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m00:04:34.875986 [debug] [Thread-3 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m00:04:34.876436 [debug] [Thread-4 (]: Began compiling node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m00:04:34.876893 [debug] [Thread-5 (]: Began compiling node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m00:04:34.882456 [debug] [Thread-2 (]: Writing injected SQL for node "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"
+[0m00:04:34.891620 [debug] [Thread-3 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"
+[0m00:04:34.896567 [debug] [Thread-4 (]: Writing injected SQL for node "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"
+[0m00:04:34.905221 [debug] [Thread-5 (]: Writing injected SQL for node "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"
+[0m00:04:34.906264 [debug] [Thread-2 (]: Began executing node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m00:04:34.907121 [debug] [Thread-3 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m00:04:34.907878 [debug] [Thread-4 (]: Began executing node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m00:04:34.924298 [debug] [Thread-5 (]: Began executing node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m00:04:34.925388 [debug] [Thread-2 (]: Writing runtime sql for node "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"
+[0m00:04:34.928864 [debug] [Thread-3 (]: Writing runtime sql for node "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"
+[0m00:04:34.932145 [debug] [Thread-4 (]: Writing runtime sql for node "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"
+[0m00:04:34.936609 [debug] [Thread-5 (]: Writing runtime sql for node "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"
+[0m00:04:34.938127 [debug] [Thread-2 (]: Using snowflake connection "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"
+[0m00:04:34.939150 [debug] [Thread-3 (]: Using snowflake connection "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"
+[0m00:04:34.940233 [debug] [Thread-4 (]: Using snowflake connection "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"
+[0m00:04:34.940917 [debug] [Thread-2 (]: On test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        is_current_flag as value_field,
+        count(*) as n_records
+
+    from PROD_DB.gold.dim_client
+    group by is_current_flag
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Y','N'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m00:04:34.941930 [debug] [Thread-5 (]: Using snowflake connection "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"
+[0m00:04:34.942479 [debug] [Thread-3 (]: On test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select client_id
+from PROD_DB.gold.dim_client
+where client_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m00:04:34.943035 [debug] [Thread-4 (]: On test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select client_sk
+from PROD_DB.gold.dim_client
+where client_sk is null
+
+
+
+      
+    ) dbt_internal_test
+[0m00:04:34.943538 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m00:04:34.944100 [debug] [Thread-5 (]: On test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "dim_client_dbt", "target_name": "prod", "node_id": "test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    client_sk as unique_field,
+    count(*) as n_records
+
+from PROD_DB.gold.dim_client
+where client_sk is not null
+group by client_sk
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m00:04:34.944610 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m00:04:34.945109 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m00:04:34.945782 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m00:04:35.249752 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.305 seconds
+[0m00:04:35.253729 [info ] [Thread-3 (]: 6 of 8 PASS not_null_dim_client_client_id ...................................... [[32mPASS[0m in 0.38s]
+[0m00:04:35.254497 [debug] [Thread-3 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f
+[0m00:04:35.256334 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.311 seconds
+[0m00:04:35.257055 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.313 seconds
+[0m00:04:35.259157 [info ] [Thread-4 (]: 7 of 8 PASS not_null_dim_client_client_sk ...................................... [[32mPASS[0m in 0.38s]
+[0m00:04:35.261073 [info ] [Thread-2 (]: 5 of 8 PASS accepted_values_dim_client_is_current_flag__Y__N ................... [[32mPASS[0m in 0.39s]
+[0m00:04:35.261846 [debug] [Thread-4 (]: Finished running node test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f
+[0m00:04:35.262512 [debug] [Thread-2 (]: Finished running node test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95
+[0m00:04:35.267627 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.322 seconds
+[0m00:04:35.269622 [info ] [Thread-5 (]: 8 of 8 PASS unique_dim_client_client_sk ........................................ [[32mPASS[0m in 0.39s]
+[0m00:04:35.270330 [debug] [Thread-5 (]: Finished running node test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca
+[0m00:04:35.272937 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m00:04:35.273859 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.unique_dim_client_client_sk.ef970941ca' was properly closed.
+[0m00:04:35.274493 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.accepted_values_dim_client_is_current_flag__Y__N.9eaa82ca95' was properly closed.
+[0m00:04:35.275004 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_id.2691f3e52f' was properly closed.
+[0m00:04:35.275398 [debug] [Dummy-1   ]: Connection 'test.dim_client_dbt.not_null_dim_client_client_sk.f1e564de3f' was properly closed.
+[0m00:04:35.275914 [info ] [Dummy-1   ]: 
+[0m00:04:35.276377 [info ] [Dummy-1   ]: Finished running 1 snapshot, 2 table models, 4 data tests, 1 view model in 0 hours 0 minutes and 3.58 seconds (3.58s).
+[0m00:04:35.277900 [debug] [Dummy-1   ]: Command end result
+[0m00:04:35.299943 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:04:35.301643 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:04:35.307447 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m00:04:35.307898 [info ] [Dummy-1   ]: 
+[0m00:04:35.308564 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m00:04:35.309073 [info ] [Dummy-1   ]: 
+[0m00:04:35.309577 [info ] [Dummy-1   ]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+[0m00:04:35.311162 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 6.516081, "process_in_blocks": "0", "process_kernel_time": 0.9, "process_mem_max_rss": "514520", "process_out_blocks": "0", "process_user_time": 5.84}
+[0m00:04:35.311771 [debug] [Dummy-1   ]: Command `cli build` succeeded at 00:04:35.311511 after 6.52 seconds
+[0m00:04:35.312269 [debug] [Dummy-1   ]: Flushing usage events

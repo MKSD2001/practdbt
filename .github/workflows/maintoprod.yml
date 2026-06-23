@@ -37,6 +37,7 @@ jobs:
             --force -x \
             --database PROD_DB \
             --schema PROD_SCHEMA
+            --debug 
 
       - name: Run Production Build
         run: |

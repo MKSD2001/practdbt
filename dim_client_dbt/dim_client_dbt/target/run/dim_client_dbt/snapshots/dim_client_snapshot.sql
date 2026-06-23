@@ -3,7 +3,7 @@
   
     
 
-        create or replace transient table SNOWFLAKE_RND.gold.dim_client_snapshot
+        create or replace transient table PROD_DB.gold.dim_client_snapshot
          as
         (
     
@@ -23,7 +23,7 @@ from (
 
 
 
-select * from SNOWFLAKE_RND.silver.silver_client
+select * from PROD_DB.silver.silver_client
 
     ) sbq
 
