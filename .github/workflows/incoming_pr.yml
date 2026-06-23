@@ -66,4 +66,4 @@ jobs:
           snow dbt execute -x \
             dimclient_dbt_project_object \
             build \
-            --target prod
+            --target dev
