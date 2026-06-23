@@ -37,7 +37,7 @@ jobs:
 
       - name: Deploy dbt Project
         run: |
-          snow dbt deploy dimclient_dbt_project_object \
+          snow dbt deploy dimclient_dbt_project_object_prod \
             --source ./dim_client_dbt/dim_client_dbt \
             --dbt-version 1.10.15 \
             --force -x \
