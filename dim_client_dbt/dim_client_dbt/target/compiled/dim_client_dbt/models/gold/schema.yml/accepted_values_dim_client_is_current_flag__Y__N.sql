@@ -8,7 +8,7 @@ with all_values as (
         is_current_flag as value_field,
         count(*) as n_records
 
-    from PROD_DB.gold.dim_client
+    from SNOWFLAKE_RND.gold.dim_client
     group by is_current_flag
 
 )

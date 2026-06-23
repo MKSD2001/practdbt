@@ -1,5 +1,5 @@
 
-  create or replace   view PROD_DB.bronze.stg_client
+  create or replace   view SNOWFLAKE_RND.bronze.stg_client
   
    as (
     -- Bronze layer: light clean/cast, 1:1 with source, no business logic
