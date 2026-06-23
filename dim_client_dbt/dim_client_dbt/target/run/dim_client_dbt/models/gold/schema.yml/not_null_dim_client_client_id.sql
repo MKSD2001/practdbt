@@ -10,7 +10,7 @@ select
 
 
 select client_id
-from PROD_DB.gold.dim_client
+from SNOWFLAKE_RND.gold.dim_client
 where client_id is null
 
 
